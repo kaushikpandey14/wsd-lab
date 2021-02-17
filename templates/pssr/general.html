@@ -1,0 +1,100 @@
+
+<html>
+<head>
+<title>A.General safety</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+
+</head>
+<style media="screen">
+  body{
+    background-color:#ADD8E6;
+  }
+  label{
+    width: 350px;
+    font-size: 20px;
+   }
+</style>
+
+<body >
+
+	<nav id="nav" class="navbar navbar-default navbar-fixed-top navbar-inverse ">
+		<div class="container-fluid">
+			<div class="navbar-header navbar-left">
+			   <a href="{% url 'page1' %}" id="navbar-brand" class="navbar-brand">PSSR</a>
+			</div>
+			
+			<div class="navbar-header navbar-right" id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav">
+					<li> <a href="{% url 'admin:index' %}">M I S</a></li>
+					</ul>             
+		   </div>
+			<div class="navbar-header navbar-right" id="bs-example-navbar-collapse-1">
+				 <ul class="nav navbar-nav">
+					 <li> <a href="{% url 'general_output' %}">FORM OUTPUT</a></li>
+					 </ul>             
+			</div>
+		</div>
+</nav>
+  <div class="container" style="text-align: center;">
+  	<br><br>
+<div class="jumbotron" style="text-align: center;background-color:rgb(139, 167, 192);">
+	<H1>General safety</H1>
+</div>
+
+<form align="left" method ="POST" action="/general/">
+	
+	{% csrf_token %}
+
+	<label for="">General Safety Items  :  </label><select name ="General_Safety_Items" style="width:500px;height:50px;font-size:20px" required>
+	<option selected >     ----select----</option>
+	<option> A.1  Is training on operating procedure provided to operation & maintenance personnel & the training document compiled?</option>
+	<option> A.2    Does all energy isolation points as mentioned in the document being marked /labeled physically in the field instruments, equipment’s, piping’s etc.</option>
+	<option>A.3    Have bump/trip hazards been properly identified and marked?</option>
+	<option>A.4  Have all hot/cold surfaces been identified & guarded to prevent burns?</option>
+	<option>A.5  Is measurement of light intensity of 10 lux for walkways and 65 lux for all corners of the shop floor, above 1m from the floor, done & documented</option>
+	<option>A.6  Is rescue apparatus like Gas mask, Oxy pack, Stretcher, etc.  available in the control rooms</option>
+	<option>A.7  Does Gas detection system of all gas prone areas with its Audio / Video Display provided in the control rooms.</option>
+	<option>A.8  Are notices, dials, screens, etc. for providing operational instructions, safety warnings and emergency information provided, if required, and positioned so that they are clearly visible and easily read?</option>
+	<option>A.9  Have all overhead fixtures, for example, pipe-hangers, pipe sleeves, pipe sleeve covers, valve handles, floor opening covers, etc., which could fall or be dislodged, been properly secured?</option>
+	<option> A.10  Are all of the applicable Work Permit Procedures (Confined Space Entry, Lock Out/Tag Out, Hot Work, High Work, etc.) in place & Operating, Maintenance and Supervisory personnel been properly trained?</option>
+	<option> A.11  Are Safety Showers and Eye Wash facilities provided?</option>
+	
+	</select>
+
+<br><br>
+<label for=""><b>Appicable  :</b></label>
+   	<input type="radio" name="radio" value="YES" id="radiogroup1" required>YES
+   	<input type="radio" name="radio" value="NO" id="radiogroup2">NO <br><br><br>
+
+<label for="">Explanation of the deviation  :  </label>         <input type="text" name="Explanation_of_the_deviation" style="height:50px; width:500px;font-size:20px" id="text" required><br><br><br>
+
+<label for=""><b>Action Item description(s)  :</b></label> <input type="text" name="Action_Item_description" style="height:100px; width:500px;font-size:20px" id="text" required><br><br><br>
+
+
+<label for="">Responsibility  :  </label><input type="text" name="Responsibility" style="height:50px; width:500px;font-size:20px" id="text" required><br><br><br>
+
+
+<label for="">plan date of completion  :  </label><input type="date" name="Plan_date_of_completion" style="height:50px;width:500px;font-size:20px" required><br><br><br>
+
+<label for="">Actual date of completition  :  </label><input type="date" name="Actual_date_of_completion" style="height:50px; width:500px;font-size:20px" id="text" required><br><br><br>
+
+
+<label for="">Severity  :  </label><select name ="Sever"id="severity" style="width:500px;height:50px;font-size:20px" required>
+	<option selected >     ----select----</option>
+	<option> Introlerable</option>
+	<option> Tolerable with alternate</option>
+	<option> Tolerable</option>
+	</select>
+<br><br><br>
+
+
+<input type="submit" value="submit" class="btn btn-default" style="color:rgb(255, 255, 255);height:50px;width:200px; background-color:rgb(82, 82, 250);margin-left: 40%; font-size:20px"><br><br><br> 
+
+</div>
+</form>
+<br><br><br>
+</body>
+</html>

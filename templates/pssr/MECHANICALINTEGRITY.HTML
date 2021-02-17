@@ -1,0 +1,102 @@
+
+<!DOCTYPE html>
+
+<html
+><head>
+<title>L. Mechanical Integrity</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+
+</head>
+<style media="screen">
+  body{
+    background-color:#ADD8E6;
+  }
+  label{
+    width: 350px;
+    font-size: 20px;
+   }
+</style>
+
+<body bgcolor="#ADD8E6">
+  <nav id="nav" class="navbar navbar-default navbar-fixed-top navbar-inverse ">
+		<div class="container-fluid">
+			<div class="navbar-header navbar-left">
+			   <a href="{% url 'page1' %}" id="navbar-brand" class="navbar-brand">PSSR</a>
+			</div>
+			
+			<div class="navbar-header navbar-right" id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav">
+					<li> <a href="{% url 'admin:index' %}">M I S</a></li>
+					</ul>             
+		   </div>
+			<div class="navbar-header navbar-right" id="bs-example-navbar-collapse-1">
+				 <ul class="nav navbar-nav">
+					 <li> <a href="{% url 'MECHANICALINTEGRITY_output' %}">FORM OUTPUT</a></li>
+					 </ul>             
+			</div>
+		</div>
+</nav>
+  <div class="container" style="text-align: center;">
+    <br><br>
+<div class="jumbotron" style="text-align: center;background-color:rgb(139, 167, 192)">
+  <H1>Mechanical Integrity</H1>
+</div>
+
+<form align="left" method ="POST">
+  {% csrf_token %}
+<label for="">Mechanical Integrity Items :  </label><select name ="Mechanical_Integrity_Items"id="severity" style="width:500px;height:50px;font-size:20px;" required>
+  <option selected >     ----select----</option>
+   <option>L.1  Have maintenance procedures been approved by Head of Maintenance?        </option>
+
+    <option>L.2 Have maintenance personnel been trained?</option>
+   <option>L.3  Have quality control procedures been approved for maintenance materials and spare parts?     </option>
+   <option>L.4  Have inspections and tests, (including regulatory requirements) for the following equipment been included in a maintenance schedule?     </option>
+   <option>L.4a  Pressure vessels and storage tanks?     </option>
+   <option>L.4b Pressure relief systems, vent systems and devices?       </option>
+   <option>L.4c Critical controls, interlocks, alarms and instruments?         </option>
+   <option>L.4d Emergency devices (including shutdown systems and isolation systems)?    </option>
+   <option>L.4e Piping systems (incl. Components, for example, valves, excess flow valves, expansion bellows) in critical service?     </option>
+   <option>L.4f Electrical earthing, grounding?    </option>
+   <option>L.4g Emergency alarm and communication system?    </option>
+   <option>L.4h Monitoring devices and sensors?    </option>
+   <option>L.4i Have all commissioning tests or inspections been identified (for example, pressure or leak tests, passivation procedures)? </option>
+   <option>L.4j Lifting equipment?   </option>
+  </select>
+
+<br><br>
+<label for=""><b>Appicable  :</b></label>
+   	<input type="radio" name="radio" value="YES" id="radiogroup1" required>YES
+   	<input type="radio" name="radio" value="NO" id="radiogroup2">NO <br><br><br>
+
+<label for="">Explanation of the deviation  :  </label>         <input type="text" name="Explanation_of_the_deviation" style="height:50px; width:500px;font-size:20px" id="text" required><br><br><br>
+
+<label for=""><b>Action Item description(s)  :</b></label> <input type="text" name="Action_Item_description" style="height:100px; width:500px;font-size:20px" id="text" required><br><br><br>
+
+
+<label for="">Responsibility  :  </label><input type="text" name="Responsibility" style="height:50px; width:500px;font-size:20px" id="text" required><br><br><br>
+
+
+<label for="">plan date of completion  :  </label><input type="date" name="Plan_date_of_completion" style="height:50px;width:500px;font-size:20px" required><br><br><br>
+
+<label for="">Actual date of completition  :  </label><input type="date" name="Actual_date_of_completion" style="height:50px; width:500px;font-size:20px" id="text" required><br><br><br>
+
+
+<label for="">Severity  :  </label><select name ="Sever"id="severity" style="width:500px;height:50px;font-size:20px" required>
+	<option selected >     ----select----</option>
+	<option> Introlerable</option>
+	<option> Tolerable with alternate</option>
+	<option> Tolerable</option>
+	</select>
+<br><br><br>
+
+
+<input type="submit" value="submit" class="btn btn-default" style="color:rgb(255, 255, 255);height:50px;width:200px; background-color:rgb(82, 82, 250);margin-left: 40%; font-size:20px"><br><br><br> 
+
+</div>
+</form>
+<br><br><br>
+</body>
+</html>
