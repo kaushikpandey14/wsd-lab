@@ -26,7 +26,7 @@ SECRET_KEY = 'sij)k-usx^cv_6)*^q^8hpw((90_*l6m(q9)x4!_xmeb*89b0v'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['kaoshikp.pythonanywhere.com']
 
 
 # Application definition
